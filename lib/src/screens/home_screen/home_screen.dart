@@ -1,4 +1,5 @@
 import 'package:api_test/src/screens/get_method/grid_images.dart';
+import 'package:api_test/src/screens/get_method/lists_product.dart';
 import 'package:api_test/src/screens/get_method/single_product.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               Center(
-                child: Wrap(
-                  direction: Axis.vertical,
+                child: Column(
                   children: [
                     ElevatedButton(
                       onPressed: () {
@@ -28,15 +28,15 @@ class HomeScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 48, vertical: 24),
+                            horizontal: 24, vertical: 24),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       child: const Text(
-                        "Single Item - Get Method ",
+                        "Single Item - (Get)",
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w700),
+                            fontSize: 16, fontWeight: FontWeight.w700),
                       ),
                     ),
                     const SizedBox(
@@ -52,15 +52,39 @@ class HomeScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 48, vertical: 24),
+                            horizontal: 24, vertical: 24),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       child: const Text(
-                        "Grid Image-FutureBuilder",
+                        "Grid Image - FutureBuilder (Get)",
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w700),
+                            fontSize: 16, fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const ProductList(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 24),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child: const Text(
+                        "Lists Products - FutureBuilder (Get)",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w700),
                       ),
                     ),
                   ],
