@@ -1,3 +1,4 @@
+import 'package:api_test/src/screens/details/ProductDetails.dart';
 import 'package:flutter/material.dart';
 
 class ListsOfProduct extends StatelessWidget {
@@ -13,11 +14,16 @@ class ListsOfProduct extends StatelessWidget {
         return InkWell(
           splashColor: Colors.black12,
           onTap: () {
-            // Action to perform when the container is clicked
-            print('Container clicked!');
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => ProductDetail(
+                title: products[index]["title"],
+                id: products[index]["id"],
+                product: products[index],
+                images: products[index]["images"],
+              ),
+            ));
           },
           child: Container(
-
             padding: const EdgeInsets.all(4),
             child: Row(
               children: [
@@ -37,18 +43,19 @@ class ListsOfProduct extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.62,
                         child: Text(
                           products[index]["title"],
-                          style: const TextStyle(fontWeight: FontWeight.w500),
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 16),
                         )),
                     const SizedBox(
-                      height: 4,
+                      height: 25,
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.62,
-                      child: Text(
-                        products[index]["description"],
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ),
+                    // SizedBox(
+                    //   width: MediaQuery.of(context).size.width * 0.62,
+                    //   child: Text(
+                    //     products[index]["description"],
+                    //     style: TextStyle(color: Colors.grey[600]),
+                    //   ),
+                    // ),
                     const SizedBox(
                       height: 4,
                     ),

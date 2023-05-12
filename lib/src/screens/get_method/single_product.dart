@@ -1,4 +1,3 @@
-import 'package:api_test/src/models/single_product_model.dart';
 import 'package:api_test/src/services/api_service.dart';
 import 'package:flutter/material.dart';
 
